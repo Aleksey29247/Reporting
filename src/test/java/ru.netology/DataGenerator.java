@@ -3,7 +3,6 @@ package ru.netology;
 import com.github.javafaker.Faker;
 import lombok.Data;
 import lombok.Value;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
@@ -35,6 +34,7 @@ public class DataGenerator {
     }
 
     public static String generateName(String locale) {
+        var faker = new Faker(new Locale(locale));
         return faker.name().fullName();
         // TODO: добавить логику для объявления переменной name и задания её значения, для генерации можно
         // использовать Faker
@@ -42,6 +42,7 @@ public class DataGenerator {
     }
 
     public static String generatePhone(String locale) {
+        var faker = new Faker(new Locale(locale));
         return faker.phoneNumber().phoneNumber();
         // TODO: добавить логику для объявления переменной phone и задания её значения, для генерации можно
         // использовать Faker
